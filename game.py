@@ -1,3 +1,1 @@
-import os
-
-print("Test")
+#python game.py to run
