@@ -1,4 +1,6 @@
 import pygame
+import game
+import questionmanagerdatabase
 
 class Game:
     def __init__(self, width=800, height=600):
