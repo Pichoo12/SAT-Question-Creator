@@ -48,3 +48,9 @@ class Game:
 # Initialize and start the game
 game = Game()
 game.start()
+#python game.py to run
+#import questionmanagerdatabase as d
+#d.getquestions
+#imported to database class
+
+
