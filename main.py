@@ -1,9 +1,13 @@
 import pygame
 import questionmanagerdatabase
+import game
+import time
 #import sound 
 
+print("debug2")
+
 class Game:
-    def __init__(self, width=1200, height=600):
+    def __init__(self, width=1200, height=1000):
         self.screen_width = width
         self.screen_height = height
 
@@ -12,10 +16,11 @@ class Game:
         screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         pygame.display.set_caption("My Game")
         clock = pygame.time.Clock()
+        print ("its running")
         running = True
 
         # Load the image
-        image = pygame.image.load("output.png")
+        image = pygame.image.load("combined_image.png")
         image_rect = image.get_rect(center=screen.get_rect().center)
 
         while running:
@@ -34,6 +39,8 @@ class Game:
 
         pygame.quit()
 
+
 if __name__ == "__main__":
+    print("debug1")
     game = Game()
     game.run()
