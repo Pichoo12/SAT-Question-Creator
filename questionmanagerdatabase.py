@@ -11,7 +11,7 @@ class QuestionManager:
                 self.questions = json.load(qfile)
 
     def saveQuestions(self):
-        # Save the current state of questions to the file
+        # Save the current state of questions to the file from data
         with open(self.questions_file, "w") as qfile:
             json.dump(self.questions, qfile, indent=4)
 

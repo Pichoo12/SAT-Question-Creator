@@ -28,7 +28,7 @@ class Game:
             combined_surface.blit(image, (0, y_offset))
             y_offset += image.get_height()
         return combined_surface
-
+#starting function
     def start(self):
         print("Welcome to the Quiz Game!") 
         rand = random.randint(1,len(self.questions))
@@ -44,7 +44,7 @@ class Game:
             if len(question['answerOptions']) > 0: 
                 for choice in question['answerOptions']:
                     combined_images.append(self.render_html_to_surface(choice['content']))
-        
+        #question option
         combined_surface = self.combine_images_vertically(combined_images)
         pygame.image.save(combined_surface, "combined_image.png")
         pygame.quit()
