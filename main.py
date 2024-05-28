@@ -1,5 +1,6 @@
 import pygame
 from answer import AnswerScreen
+import game 
 
 class Game:
     def __init__(self, width=1200, height=1000):

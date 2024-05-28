@@ -1,6 +1,7 @@
 import pygame
 import random
 import imgkit
+import json
 from io import BytesIO
 import questionmanagerdatabase
 
@@ -34,6 +35,9 @@ class Game:
         rand = random.randint(1,len(self.questions))
         question = self.question_manager.getQuestion(self.questions[rand])
         combined_images = []
+        print (json.dumps(question))
+        
+
         if 'stimulus' in question:
             stimulus = question["stimulus"]
             combined_images.append(self.render_html_to_surface(stimulus))
@@ -47,6 +51,15 @@ class Game:
         #question option
         combined_surface = self.combine_images_vertically(combined_images)
         pygame.image.save(combined_surface, "combined_image.png")
+        combined_images = []
+        if 'correct_answer' in question:
+            combined_images.append(self.render_html_to_surface(question['correct_answer'][0]))
+
+        if 'rationale' in question:
+            combined_images.append(self.render_html_to_surface(question['rationale']))
+        #question option
+        combined_surface = self.combine_images_vertically(combined_images)
+        pygame.image.save(combined_surface, "combined_image2.png")
         pygame.quit()
         '''while True:
             print("\nSelect an option:")
